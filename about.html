@@ -9,32 +9,23 @@
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li id="navbar">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Me</a>
-                <a href="#">My Projects</a>
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-    </nav>
     <section>
-        <div id="loading" hidden>
-            <img src="./img/loading.gif" alt="Loading......">
-        </div>
         <div class="main" id="mainSection">
-
-            <img id="profileImage" height="100" width="100">
+            <img id="profileImage" height="300" width="300">
+            <div class="twitter-profile">
+                <h2>Follow me on Twitter</h2>
+                <a class="twitter-timeline" data-width="300" data-height="500" data-theme="dark"
+                    href="https://twitter.com/imksav?ref_src=twsrc%5Etfw">Tweets by imksav</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
             <h1 id="titleName"></h1>
             <p id="myBio"></p>
             <h3 id="followersDetails"></h3>
-            <h4 id="website"></h4>
-            <p> Follow me on Github <a id="githubAccount"> | @imksav</a></p>
-            <h2>Follow me on Twitter</h2>
-            <div><a class="twitter-timeline" data-width="300" data-height="500" data-theme="dark"
-                    href="https://twitter.com/imksav?ref_src=twsrc%5Etfw">Tweets by imksav</a>
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <div id="myProjects">
+                <h1>My projects</h1>
+                <div id="projectsList">
+
+                </div>
             </div>
 
         </div>
@@ -47,13 +38,15 @@
             response => response.json()
                 .then(function (data) {
                     console.log(data)
-                    let totalFollowers = data['followers']
-                    let followersInfo = 'Thank you so much to all ${totalFollowers} followers'
+
+                    let followersCount = data['followers']
+                    let followersInfo = "Thank you so much to all ${followersCount} followers"
                     document.getElementById('profileImage').src = data['avatar_url']
                     document.getElementById('titleName').textContent = data['name']
                     document.getElementById('myBio').textContent = data['bio']
                     document.getElementById('followersDetails').textContent = followersInfo
                     document.getElementById('githubAccount').href = data['html_url']
+                    document.getElementById('projectsList').href = data['public_repos ']
                     document.getElementsById('mainSection').hidden = false
                     document.getElementById('loading').hidden = true
                 })

@@ -2,12 +2,33 @@
  margin: auto;
  padding: 0px;   
 }
-#navbar{
-    float: left;
-    margin: 50px;
 
-}
 .main{
   text-align: center;
-  margin-top: 100px;
+  margin-top: auto;
+  background-color: aquamarine;
+
+}
+.main #profileImage{
+  
+    border-radius: 29px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.main #titleName{
+    float: initial;
+    
+}
+#myProjects{
+    text-align: center;
+    margin-top: 10px;
+}
+.twitter-profile{
+    float: right;
+    border-radius: 29px;
+    margin-right: 10px;
+}
+.twitter-profile, .h2{
+    text-align: center;
+    color: rgb(0, 100, 158);
 }
