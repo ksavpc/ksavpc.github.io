@@ -1,0 +1,13 @@
+*{
+ margin: auto;
+ padding: 0px;   
+}
+#navbar{
+    float: left;
+    margin: 50px;
+
+}
+.main{
+  text-align: center;
+  margin-top: 100px;
+}
